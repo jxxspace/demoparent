@@ -18,5 +18,10 @@
 		from city
 		where city_name = #{cityName}
 	</select>
+	<select id="findAll" resultMap="BaseResultMap" >
+		select
+		<include refid="Base_Column_List" />
+		from city
+	</select>
 
 </mapper>

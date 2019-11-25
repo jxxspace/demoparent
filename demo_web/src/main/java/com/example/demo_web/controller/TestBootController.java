@@ -3,7 +3,7 @@ package com.example.demo_web.controller;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageInfo;
 import com.sample.domain.City;
 import com.sample.service.CityService;
 import io.swagger.annotations.*;
@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Map;
 
 @SpringBootApplication
@@ -44,13 +43,17 @@ public class TestBootController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/jsonTest3", method = RequestMethod.POST)
-    public List<String> jsonTest3(HttpServletRequest request,
+    @RequestMapping(value = "/api/findall", method = RequestMethod.POST)
+    public  PageInfo<City> jsonTest3(
+            @ApiParam(name = "pageNum", value = "第几页") @RequestParam(required = true) String pageNum,
+            @ApiParam(name = "pagesize", value = "每页多少条数据") @RequestParam(required = true) String pagesize,HttpServletRequest request,
                                   HttpServletResponse response) {
-        List<String> list = new ArrayList<String>();
-        list.add("hello");
-        list.add("你好");
-        return list;
+
+            int pageNumInt = pageNum != null?Integer.parseInt(pageNum):1;
+            int pagesizeInt = pagesize != null?Integer.parseInt(pagesize):5;
+            PageInfo<City> pageinfo = cityService.findAll(pageNumInt,pagesizeInt);
+
+            return pageinfo;
 
     }
 }
