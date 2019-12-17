@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_dao/demo_dao.iml" filepath="$PROJECT_DIR$/demo_dao/demo_dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_entity/demo_entity.iml" filepath="$PROJECT_DIR$/demo_entity/demo_entity.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo_service/demo_service.iml" filepath="$PROJECT_DIR$/demo_service/demo_service.iml" />
