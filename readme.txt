@@ -1,1 +1,1 @@
-这是一个聚合项目，里面只写了最基本的链接mysql数据库,用的mybatis,增加了swagger,log4j2,fastjson
+这是一个聚合项目，里面只写了最基本的链接mysql数据库,用的mybatis,增加了swagger,log4j2,fastjson,pagehelper
